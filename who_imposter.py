@@ -35,7 +35,6 @@ folder_path = "C:\Users\{}\AppData\Roaming".format(Username)
 # store the virus hash in order to be able to compare it
 svchost_hash = "d7506e360f5795e9a8ba3e3e32e5450ddf3d202f8f16d7dc7850de820466dcc3"
 
-
 # first task
 
 

