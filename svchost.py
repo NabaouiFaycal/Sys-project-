@@ -48,7 +48,7 @@ APPCOMMAND_MICROPHONE_VOLUME_UP = 0x1A0000
 # Decrease microphone volume by (-2).
 APPCOMMAND_MICROPHONE_VOLUME_DOWN = 0x190000
 
-# get the active window
+# get the hwnd of the active window
 hwnd_active = win32gui.GetForegroundWindow()
 
 # use it to create an event and take cantrol over the mic
