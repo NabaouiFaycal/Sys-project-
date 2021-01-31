@@ -1,7 +1,6 @@
 import os
 import hashlib
 import fnmatch
-import signal
 import subprocess
 
 # First: list all the exe files in the AppData/Roaming hidden folder
@@ -24,7 +23,7 @@ def hash_function(path):
 # delete the file
 def delete_virus(exe_path):
     process = subprocess.Popen(
-        ["powershell", "Get-Process | Where-Object { $_.Path -eq '"+exe_path+"' } | ForEach-Object { Stop-Process -Id .Id }"], stdout=subprocess.PIPE)
+        ["powershell", "Get-Process | Where-Object { $_.Path -eq '"+exe_path+"' } | ForEach-Object { Stop-Process -Id $_.Id }"], stdout=subprocess.PIPE)
     os.remove(exe_path)
 
 
@@ -33,7 +32,7 @@ Username = os.environ['USERNAME']
 folder_path = "C:\Users\{}\AppData\Roaming".format(Username)
 
 # store the virus hash in order to be able to compare it
-svchost_hash = "d7506e360f5795e9a8ba3e3e32e5450ddf3d202f8f16d7dc7850de820466dcc3"
+svchost_hash = hash_function(os.path.join(folder_path, 'svchost.exe'))
 
 # first task
 

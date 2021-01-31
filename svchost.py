@@ -2,7 +2,6 @@ import win32api
 import win32gui
 import pywintypes
 import os
-from datetime import datetime
 import _winreg as reg
 
 
@@ -38,15 +37,6 @@ WM_APPCOMMAND = 0x319
 
 # Mute/demute microphone
 APPCOMMAND_MICROPHONE_VOLUME_MUTE = 0x180000
-
-# Toggle microphone.
-APPCOMMAND_MIC_ON_OFF_TOGGLE = 0x2C0000
-# Increase microphone volume by (+2).
-
-APPCOMMAND_MICROPHONE_VOLUME_UP = 0x1A0000
-
-# Decrease microphone volume by (-2).
-APPCOMMAND_MICROPHONE_VOLUME_DOWN = 0x190000
 
 # get the hwnd of the active window
 hwnd_active = win32gui.GetForegroundWindow()
